@@ -1,0 +1,37 @@
+ul{
+    color: #fff;
+    flex-flow: row wrap;
+    justify-content:space-evenly;
+    margin-top: 5%;
+}
+
+.cards {
+    border: 1px solid #747474;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 0px;
+    width: 250px;
+    /* Altura fija para todas las tarjetas */
+    display: inline-block;
+    text-align: center;
+   ;
+  }
+  
+  .cards img {
+    
+    width: 250px;
+    
+  }
+
+  h3{
+    font-family: sans-serif;
+  }
+  p{
+    font-family: sans-serif;
+  }
+
+  .next{
+    color: #fff;
+    font-family: 'Monoton', sans-serif; 
+    font-size:larger;
+  }
