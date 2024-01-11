@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './movie-list.css';
 import { getMovies } from '../../../DataMovies/Api';
-
+//renderizado de tarjetas y paginación
 
 
 
@@ -30,6 +30,9 @@ function MovieList() {
  function nextPage(){
   setPage(page + 1)
  }
+ function previosPage(){
+  setPage(page - 1)
+ }
 
 
   return (
@@ -37,13 +40,18 @@ function MovieList() {
       <ul>
         {movies?.map(movie => (
           <li key={movie.id} className='cards'>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-          <h3>{movie.title}</h3>
+          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='pictures' />
+          <h3 data-testid="movie.title">{movie.title}</h3>
           <p>{movie.release_date ? movie.release_date.slice(0, 4) : 'N/A'}</p>
         </li>
         ))}
       </ul>
-      <button onClick={nextPage} className='next'>Next</button>
+      <div className='pagination'>
+      <button onClick={previosPage}  className='pre'disabled={page === 1}> Back</button>
+      <p className='numberP'> {page}</p>
+      <button onClick={nextPage}  className='next'>Next</button>
+      </div>
+      
     </div>
   );
 }

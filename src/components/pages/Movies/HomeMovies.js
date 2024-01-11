@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomeMovies.css';
-//
+//barra de navegación(botones filter, home y order by) y header
 
 function HomeMovies() {
   return (    

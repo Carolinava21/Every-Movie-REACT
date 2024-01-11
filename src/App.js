@@ -2,7 +2,7 @@ import React from 'react'
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from './components/pages/Home';
 import './index.css';
-//routes se unen todos los componentes
+//routes se unen todas las vistas Home y details
 
 function App() {
   return (
