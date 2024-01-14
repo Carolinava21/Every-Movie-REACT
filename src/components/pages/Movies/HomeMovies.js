@@ -1,12 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomeMovies.css';
+import { useLocation,useNavigate } from 'react-router-dom';
 //barra de navegación(botones filter, home y order by) y header
 
-function HomeMovies() {
+function HomeMovies({genre, selectGenre, selectOrder}) {
+  const location = useLocation();
+  const navigate = useLocation();
+  //const [filteredMovies, setFilteredMovies] = useState();
+  function handleGenreChange(event){
+    selectGenre(event.target.vaule)
+  }
+
+  function handleOrderChange(event){
+    selectOrder(event.target.value)
+  }
+
+  function reHome (){
+    if (location.pathname=== "/"){
+      window.location.reload();
+    }else{
+      navigate("/");
+    }
+  };
+  
+  
   return (    
     <nav className='menu'>
       <ul>
-      <li><a href="#inicio">Home</a></li>
+      <li onClick={reHome}><a href="#inicio">Home</a></li>
             <li><a href="#filter by">Filter - by</a></li>
             <li><a href="#order by">Order - by</a></li>
         </ul> 
