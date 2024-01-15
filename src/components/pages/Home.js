@@ -6,7 +6,7 @@ import MovieList from './Movies/movie-list'
 function Home() {
   return (
     <>
-    <h1>Every - Movie</h1>
+    <header>Every - Movie</header>
     <HomeMovies />
     <MovieList />
      </>
