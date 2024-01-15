@@ -5,7 +5,7 @@
     font-family: 'Monoton', sans-serif; 
 }
 
-h1 {
+header {
     color: #FFFF;
     text-align: center; /* Cambié 'align-self' a 'text-align' */
     font-family: 'Monoton', sans-serif; /* Especifica una fuente de respaldo en caso de que 'Monoton' no esté disponible */
