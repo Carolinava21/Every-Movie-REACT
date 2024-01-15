@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import './HomeMovies.css';
 import { useLocation,useNavigate } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { getMovies } from '../../../DataMovies/Api';
 //barra de navegación(botones filter, home y order by) y header
 
-function HomeMovies({genre, selectGenre, selectOrder}) {
+function HomeMovies({genres, selectGenre, selectOrder}) {
   const location = useLocation();
-  const navigate = useLocation();
+  const navigate = useNavigate();
   //const [filteredMovies, setFilteredMovies] = useState();
   function handleGenreChange(event){
-    selectGenre(event.target.vaule)
+    selectGenre(event.target.value)
   }
 
   function handleOrderChange(event){
@@ -26,11 +28,23 @@ function HomeMovies({genre, selectGenre, selectOrder}) {
   
   return (    
     <nav className='menu'>
-      <ul>
-      <li onClick={reHome}><a href="#inicio">Home</a></li>
-            <li><a href="#filter by">Filter - by</a></li>
-            <li><a href="#order by">Order - by</a></li>
-        </ul> 
+      <div>
+      <button onClick={reHome}><a href="#inicio">Home</a></button>
+        <Form.Select    
+        aria-label="filterByGenreSelect"
+        id="filters"
+        name="category"
+        onChange={handleGenreChange}
+       >
+        <option value="categories">FILTER BY GENRE</option>
+        {genres && genres.map((genre) => (
+  <option key={genre.id} value={genre.id}>
+    {genre.name}
+  </option>
+))}
+        </Form.Select>
+            {/* <Form.Select href="#order by">Order - by</Form.Select> */}
+        </div> 
     </nav>
   )
 }
