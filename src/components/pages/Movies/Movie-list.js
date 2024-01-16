@@ -5,16 +5,17 @@ import { getMovies } from '../../../DataMovies/Api';
 
 
 
-function MovieList() {
+function MovieList({genres}) {
   const [movies, setMovies] = useState([]);
   const [page,setPage] = useState (1)
+  
    
 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const moviesData = await getMovies(page);
+        const moviesData = await getMovies(page,genres);
         setMovies(moviesData.results);
         console.log(moviesData);
 
@@ -25,7 +26,7 @@ function MovieList() {
     };
 
     fetchData();
-  }, [page]);
+  }, [page,genres]);
 
  function nextPage(){
   setPage(page + 1)

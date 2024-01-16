@@ -3,12 +3,12 @@ import './HomeMovies.css';
 import { useLocation,useNavigate } from 'react-router-dom';
 //barra de navegación(botones filter, home y order by) y header
 
-function HomeMovies({genre, selectGenre, selectOrder}) {
+function HomeMovies({ onChangeGenre}) {
   const location = useLocation();
   const navigate = useLocation();
   //const [filteredMovies, setFilteredMovies] = useState();
   function handleGenreChange(event){
-    selectGenre(event.target.vaule)
+    onChangeGenre(event.target.vaule)
   }
 
   function handleOrderChange(event){
@@ -28,7 +28,10 @@ function HomeMovies({genre, selectGenre, selectOrder}) {
     <nav className='menu'>
       <ul>
       <li onClick={reHome}><a href="#inicio">Home</a></li>
-            <li><a href="#filter by">Filter - by</a></li>
+            <li><select 
+            //
+            > </select></li>
+            
             <li><a href="#order by">Order - by</a></li>
         </ul> 
     </nav>
