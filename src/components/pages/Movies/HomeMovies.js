@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import './HomeMovies.css';
-import { useLocation,useNavigate } from 'react-router-dom';
-//barra de navegación(botones filter, home y order by) y header
+import { useLocation, } from 'react-router-dom';
 
-function HomeMovies({ onChangeGenre}) {
+
+function HomeMovies({genres, onChangeGenre}) {
   const location = useLocation();
   const navigate = useLocation();
-  //const [filteredMovies, setFilteredMovies] = useState();
+  
   function handleGenreChange(event){
-    onChangeGenre(event.target.vaule)
+    onChangeGenre([])
   }
 
-  function handleOrderChange(event){
-    selectOrder(event.target.value)
-  }
+  // function handleOrderChange(event){
+  //   selectOrder(event.target.value)
+  // }
 
   function reHome (){
     if (location.pathname=== "/"){
@@ -28,9 +28,21 @@ function HomeMovies({ onChangeGenre}) {
     <nav className='menu'>
       <ul>
       <li onClick={reHome}><a href="#inicio">Home</a></li>
-            <li><select 
-            //
-            > </select></li>
+            <li className='filterby'>
+              <select 
+              id="filters"
+        name="category"
+        onChange={handleGenreChange}
+      >
+        <option value="categories"> GENRE</option>
+        {genres.map((genre) => (
+              <option key={genre.id} value={genre.id}>
+                {genre.name}
+              </option>
+            ))}
+      
+             </select>
+             </li>
             
             <li><a href="#order by">Order - by</a></li>
         </ul> 
