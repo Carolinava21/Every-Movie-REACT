@@ -8,7 +8,8 @@ function HomeMovies({genres, onChangeGenre}) {
   const navigate = useLocation();
   
   function handleGenreChange(event){
-    onChangeGenre([])
+    console.log(event.target.value)
+    onChangeGenre(event.target.value)
   }
 
   // function handleOrderChange(event){
