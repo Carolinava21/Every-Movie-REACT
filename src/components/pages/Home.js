@@ -4,8 +4,15 @@ import MovieList from './Movies/Movie-list'
 //aquí uno los componentes (Los importo y coloco de forma jerarquica)
 
 function Home() {
-  const [genres, setGenres] = useState([{id: "16", name: 'Animation'}]);
+  const [genres, setGenres] = useState([
+    {id:"16", name: "Animation"},
+    {id:"14", name:"Fantasy "},
+    {id:"10402", name:"Music"},
+    {id:"12", name:"Adventure"}
+  ]);
+
   const [selectedGenre, setSelectedGenre] = useState();
+
   return (
     <>
     <header>Every - Movie</header>
