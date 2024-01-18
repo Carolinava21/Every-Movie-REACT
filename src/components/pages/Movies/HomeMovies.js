@@ -3,7 +3,7 @@ import './HomeMovies.css';
 import { useLocation, } from 'react-router-dom';
 
 
-function HomeMovies({genres, onChangeGenre}) {
+function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
   const location = useLocation();
   const navigate = useLocation();
   
@@ -12,9 +12,9 @@ function HomeMovies({genres, onChangeGenre}) {
     onChangeGenre(event.target.value)
   }
 
-  // function handleOrderChange(event){
-  //   selectOrder(event.target.value)
-  // }
+   function handleOrderChange(event){
+    onChangeOrder(event.target.value)
+   }
 
   function reHome (){
     if (location.pathname=== "/"){
@@ -28,14 +28,14 @@ function HomeMovies({genres, onChangeGenre}) {
   return (    
     <nav className='menu'>
       <ul>
-      <li onClick={reHome}><a href="#inicio">Home</a></li>
+      <li onClick={reHome}><a href="#inicio">HOME</a></li>
             <li className='filterby'>
               <select 
               id="filters"
         name="category"
         onChange={handleGenreChange}
       >
-        <option value="categories"> GENRE</option>
+        <option value="categories">GENRE</option>
         {genres.map((genre) => (
               <option key={genre.id} value={genre.id}>
                 {genre.name}
@@ -45,7 +45,18 @@ function HomeMovies({genres, onChangeGenre}) {
              </select>
              </li>
             
-            <li><a href="#order by">Order - by</a></li>
+            <li className='order by'>
+              <select
+              id="order"
+              name="category"
+              onChange={handleOrderChange}
+              >
+            <option value="order">ORDER - BY</option>
+            <option value={"popularity.asc"}>LESS-POPULAR</option>
+            <option value={"popularity.desc"}>MOST-POPULAR</option>
+
+                </select>
+             </li>
         </ul> 
     </nav>
   )

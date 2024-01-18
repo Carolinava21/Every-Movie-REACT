@@ -12,12 +12,15 @@ function Home() {
   ]);
 
   const [selectedGenre, setSelectedGenre] = useState();
+  const [popularity, setPopularity] =useState([])
+  const [orderedByPopularity, setOrderedByPopularity] = useState();
 
   return (
     <>
     <header>Every - Movie</header>
-    <HomeMovies onChangeGenre={setSelectedGenre}  genres={genres} />
-    <MovieList  selectedGenre={selectedGenre}/>
+    <HomeMovies onChangeGenre={setSelectedGenre}  genres={genres} onChangeOrder={setOrderedByPopularity}
+    popularity={popularity}/>
+    <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity}/> 
      </>
   )
 }

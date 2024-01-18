@@ -5,7 +5,7 @@ import { getMovies } from '../../../DataMovies/Api';
 
 
 
-function MovieList({selectedGenre}) {
+function MovieList({selectedGenre,orderedByPopularity}) {
   const [movies, setMovies] = useState([]);
   const [page,setPage] = useState (1)
   
@@ -15,7 +15,7 @@ function MovieList({selectedGenre}) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const moviesData = await getMovies(page,selectedGenre);
+        const moviesData = await getMovies(page,selectedGenre,orderedByPopularity);
         setMovies(moviesData.results);
         console.log(moviesData);
 
@@ -26,7 +26,7 @@ function MovieList({selectedGenre}) {
     };
 
     fetchData();
-  }, [page,selectedGenre]);
+  }, [page,selectedGenre,orderedByPopularity]);
 
  function nextPage(){
   setPage(page + 1)
