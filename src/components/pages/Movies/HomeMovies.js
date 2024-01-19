@@ -28,7 +28,7 @@ function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
   return (    
     <nav className='menu'>
       <ul>
-      <li onClick={reHome}><a href="#inicio">HOME</a></li>
+      <li onClick={reHome} ><a href="#inicio">HOME</a></li>
             <li className='filterby'>
               <select 
               id="filters"
@@ -44,16 +44,17 @@ function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
       
              </select>
              </li>
-            
+                       
             <li className='order by'>
-              <select
+             <select
               id="order"
               name="category"
               onChange={handleOrderChange}
               >
-            <option value="order">ORDER - BY</option>
+             <option value="">ORDER - BY</option> 
+             <option value={"popularity.desc"}>MOST-POPULAR</option>
             <option value={"popularity.asc"}>LESS-POPULAR</option>
-            <option value={"popularity.desc"}>MOST-POPULAR</option>
+            
 
                 </select>
              </li>

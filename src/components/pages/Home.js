@@ -13,7 +13,7 @@ function Home() {
 
   const [selectedGenre, setSelectedGenre] = useState();
   const [popularity, setPopularity] =useState([])
-  const [orderedByPopularity, setOrderedByPopularity] = useState();
+  const [orderedByPopularity, setOrderedByPopularity] = useState("revenue.desc");
 
   return (
     <>
