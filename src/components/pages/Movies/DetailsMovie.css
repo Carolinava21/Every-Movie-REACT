@@ -1,0 +1,18 @@
+button {
+    color: #fff;
+    font-family: 'Monoton', sans-serif;
+    font-size: larger;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #9F86C0;
+  }
+  button:before {
+    content: "←";
+    margin-right: 5px;
+  }
+  

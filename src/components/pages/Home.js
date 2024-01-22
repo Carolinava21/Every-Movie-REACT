@@ -1,6 +1,7 @@
 import React, {  useState } from 'react';
-import HomeMovies from './Movies/HomeMovies'
-import MovieList from './Movies/Movie-list'
+import HomeMovies from './Movies/HomeMovies';
+import MovieList from './Movies/Movie-list';
+import DetailMovies from './Movies/DetailsMovie';
 //aquí uno los componentes (Los importo y coloco de forma jerarquica)
 
 function Home() {
