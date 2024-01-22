@@ -15,13 +15,32 @@ function Home() {
   const [selectedGenre, setSelectedGenre] = useState();
   const [popularity, setPopularity] =useState([])
   const [orderedByPopularity, setOrderedByPopularity] = useState("revenue.desc");
+  const [page,setPage] = useState (1)
+    
+ function nextPage(){
+  setPage(page + 1)
+ }
+ function previousPage(){
+  setPage(page - 1)
+ }
+  function resetPage(){
+    setPage(1)
+  } 
+
+function handleChangeSelectedGenre(genre){
+  setSelectedGenre(genre);
+  resetPage()
+
+
+}
 
   return (
     <>
     <header>Every - Movie</header>
-    <HomeMovies onChangeGenre={setSelectedGenre}  genres={genres} onChangeOrder={setOrderedByPopularity}
+    <HomeMovies onChangeGenre={handleChangeSelectedGenre}  genres={genres} onChangeOrder={setOrderedByPopularity}
     popularity={popularity}/>
-    <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity}/> 
+    <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity} page={page} 
+    nextPage={nextPage} previousPage={previousPage} /> 
      </>
   )
 }
