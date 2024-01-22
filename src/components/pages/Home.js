@@ -30,14 +30,17 @@ function Home() {
 function handleChangeSelectedGenre(genre){
   setSelectedGenre(genre);
   resetPage()
-
-
 }
 
+function handleChangeOrdered(popularity){
+  setOrderedByPopularity(popularity);
+  resetPage()
+
+}
   return (
     <>
     <header>Every - Movie</header>
-    <HomeMovies onChangeGenre={handleChangeSelectedGenre}  genres={genres} onChangeOrder={setOrderedByPopularity}
+    <HomeMovies onChangeGenre={handleChangeSelectedGenre}  genres={genres} onChangeOrder={handleChangeOrdered}
     popularity={popularity}/>
     <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity} page={page} 
     nextPage={nextPage} previousPage={previousPage} /> 

@@ -11,8 +11,4 @@ button {
   button:hover {
     background-color: #9F86C0;
   }
-  button:before {
-    content: "←";
-    margin-right: 5px;
-  }
-  
+ 
