@@ -27,7 +27,9 @@ function MovieList({selectedGenre,orderedByPopularity}) {
 
     fetchData();
   }, [page,selectedGenre,orderedByPopularity]);
-
+  
+ 
+  
  function nextPage(){
   setPage(page + 1)
  }

@@ -9,11 +9,11 @@ function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
   
   function handleGenreChange(event){
     console.log(event.target.value)
-    onChangeGenre(event.target.value)
-  }
+    onChangeGenre(event.target.value);
+    }
 
    function handleOrderChange(event){
-    onChangeOrder(event.target.value)
+    onChangeOrder(event.target.value);
    }
 
   function reHome (){
