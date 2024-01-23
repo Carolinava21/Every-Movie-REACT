@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './movie-list.css';
 import { getMovies } from '../../../DataMovies/Api';
+import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg'
 
 //renderizado de tarjetas y paginación
 
@@ -9,10 +10,6 @@ import { getMovies } from '../../../DataMovies/Api';
 function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage}) {
   
   const [movies, setMovies] = useState([]);
- 
-  
-  
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +35,10 @@ function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage
       <ul>
         {movies?.map(movie => (
           <li key={movie.id} className='cards'>
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className='pictures' />
+          <img
+          src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noPicture}
+            alt={movie.title} className='pictures'/>
+            
           <h3 data-testid="movie.title">{movie.title}</h3>
           <p>{movie.release_date ? movie.release_date.slice(0, 4) : 'N/A'}</p>
         </li>
