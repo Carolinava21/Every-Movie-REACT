@@ -4,7 +4,7 @@ nav{
    
 }
 
-div {
+ul {
    display: flex;
    flex-direction: row;
    justify-content: space-around;
@@ -14,11 +14,11 @@ div {
    overflow: hidden;
 }
 
-div {
+li {
    float: center;
 }
 
-div a {
+li a {
    display: block;
    color: white;
    text-align: center;
@@ -26,6 +26,18 @@ div a {
    text-decoration: none;
 }
 
-div a:hover {
+li a:hover {
+   background-color: #9F86C0;
+}
+select {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   font-size:large
+   
+
+}
+select:hover {
    background-color: #9F86C0;
 }

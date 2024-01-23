@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import './movie-list.css';
 import { getMovies } from '../../../DataMovies/Api';
+
 //renderizado de tarjetas y paginación
 
 
 
-function MovieList() {
+function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage}) {
+  
   const [movies, setMovies] = useState([]);
-  const [page,setPage] = useState (1)
-   
+ 
+  
+  
 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const moviesData = await getMovies(page);
+        const moviesData = await getMovies(page,selectedGenre,orderedByPopularity);
         setMovies(moviesData.results);
         console.log(moviesData);
 
@@ -25,14 +28,9 @@ function MovieList() {
     };
 
     fetchData();
-  }, [page]);
-
- function nextPage(){
-  setPage(page + 1)
- }
- function previosPage(){
-  setPage(page - 1)
- }
+  }, [page,selectedGenre,orderedByPopularity]);
+  
+ 
 
 
   return (
@@ -47,7 +45,7 @@ function MovieList() {
         ))}
       </ul>
       <div className='pagination'>
-      <button onClick={previosPage}  className='pre'disabled={page === 1}> Back</button>
+      <button onClick={previousPage}  className='pre'disabled={page === 1}> Back</button>
       <p className='numberP'> {page}</p>
       <button onClick={nextPage}  className='next'>Next</button>
       </div>

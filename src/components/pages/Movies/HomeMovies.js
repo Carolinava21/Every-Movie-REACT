@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import './HomeMovies.css';
-import { useLocation,useNavigate } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
-import { getMovies } from '../../../DataMovies/Api';
-//barra de navegación(botones filter, home y order by) y header
+import { useLocation, } from 'react-router-dom';
 
-function HomeMovies({genres, selectGenre, selectOrder}) {
+
+function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
   const location = useLocation();
-  const navigate = useNavigate();
-  //const [filteredMovies, setFilteredMovies] = useState();
+  const navigate = useLocation();
+  
   function handleGenreChange(event){
-    selectGenre(event.target.value)
-  }
+    console.log(event.target.value)
+    onChangeGenre(event.target.value);
+    }
 
-  function handleOrderChange(event){
-    selectOrder(event.target.value)
-  }
+   function handleOrderChange(event){
+    onChangeOrder(event.target.value);
+   }
 
   function reHome (){
     if (location.pathname=== "/"){
@@ -28,23 +27,38 @@ function HomeMovies({genres, selectGenre, selectOrder}) {
   
   return (    
     <nav className='menu'>
-      <div>
-      <button onClick={reHome}><a href="#inicio">Home</a></button>
-        <Form.Select    
-        aria-label="filterByGenreSelect"
-        id="filters"
+      <ul>
+      <li onClick={reHome} ><a href="#inicio">HOME</a></li>
+            <li className='filterby'>
+              <select 
+              id="filters"
         name="category"
         onChange={handleGenreChange}
-       >
-        <option value="categories">FILTER BY GENRE</option>
-        {genres && genres.map((genre) => (
-  <option key={genre.id} value={genre.id}>
-    {genre.name}
-  </option>
-))}
-        </Form.Select>
-            {/* <Form.Select href="#order by">Order - by</Form.Select> */}
-        </div> 
+      >
+        <option value="categories">GENRE</option>
+        {genres.map((genre) => (
+              <option key={genre.id} value={genre.id}>
+                {genre.name}
+              </option>
+            ))}
+      
+             </select>
+             </li>
+                       
+            <li className='order by'>
+             <select
+              id="order"
+              name="category"
+              onChange={handleOrderChange}
+              >
+             <option value="">ORDER - BY</option> 
+             <option value={"popularity.desc"}>MOST-POPULAR</option>
+            <option value={"popularity.asc"}>LESS-POPULAR</option>
+            
+
+                </select>
+             </li>
+        </ul> 
     </nav>
   )
 }
