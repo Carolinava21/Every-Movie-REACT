@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './movie-list.css';
 import { getMovies } from '../../../DataMovies/Api';
 import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg'
+import { Link } from 'react-router-dom';
 
 //renderizado de tarjetas y paginación
 
@@ -34,7 +35,8 @@ function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage
     <div>
       <ul>
         {movies?.map(movie => (
-          <li key={movie.id} className='cards'>
+        <li key={movie.id} className='cards'>
+          <Link to={`/details/${movie.id}`}></Link>
           <img
           src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noPicture}
             alt={movie.title} className='pictures'/>

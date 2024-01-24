@@ -35,8 +35,11 @@ function handleChangeSelectedGenre(genre){
 function handleChangeOrdered(popularity){
   setOrderedByPopularity(popularity);
   resetPage()
-
 }
+
+// function movieIdselected(){
+
+// }
   return (
     <>
     <header>Every - Movie</header>
@@ -44,6 +47,7 @@ function handleChangeOrdered(popularity){
     popularity={popularity}/>
     <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity} page={page} 
     nextPage={nextPage} previousPage={previousPage} /> 
+    <footer>DEV - @Carolina Navarro, 2024</footer>
      </>
   )
 }

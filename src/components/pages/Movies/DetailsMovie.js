@@ -2,15 +2,18 @@ import {useEffect, useState} from 'react';
 import './DetailsMovie.css';
 import { getDetails } from '../../../DataMovies/ApiDetails'
 import { Card } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg'
 
 function DetailMovies() {
-    const [movieDetails, setMovieDetails] =useState({})
+    const [movieId, setMovieId] =useState({})
+    const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const moviesDetails = await getDetails();
-        setMovieDetails(moviesDetails.results);
+        const moviesDetails = await getDetails(id);
+        setMovieId(moviesDetails.results);
         console.log(moviesDetails);
 
       } catch (error) {
@@ -19,7 +22,7 @@ function DetailMovies() {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   function goBack() {
     window.location.href = '/';
@@ -34,18 +37,18 @@ function DetailMovies() {
       <Card.Img
         id="movie-details-img"
         variant="top"
-        src={movieDetails.poster_path ? `http://image.tmdb.org/t/p/w500${movieDetails.poster_path}` : ''}
+        src={id.poster_path ? `https://image.tmdb.org/t/p/w500${id.poster_path}` : noPicture}
       />
       <Card.Body className="card-text">
-        <Card.Title id="movie-details-title">{movieDetails.title}</Card.Title>
-        <Card.Text>{movieDetails.overview}</Card.Text>
-        <Card.Text>Release Year: {movieDetails.release_date}</Card.Text>
-        <Card.Text>Voting average: {movieDetails.vote_average}</Card.Text>
-        <Card.Text>Total votes: {movieDetails.vote_count}</Card.Text>
+        <Card.Title id="movie-details-title">{id.title}</Card.Title>
+        <Card.Text>{id.overview}</Card.Text>
+        <Card.Text>Release Year: {id.release_date}</Card.Text>
+        <Card.Text>Voting average: {id.vote_average}</Card.Text>
+        <Card.Text>Total votes: {id.vote_count}</Card.Text>
         <Card.Text>
           Genres: &nbsp;
-          {movieDetails.genres && movieDetails.genres.map((genre, index) => {
-    return `${genre.name}${index === movieDetails.genres.length - 1 ? "." : ","}  `;
+          {id.genres && id.genres.map((genre, index) => {
+    return `${genre.name}${index === id.genres.length - 1 ? "." : ","}  `;
 })}
         
         </Card.Text>

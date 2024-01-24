@@ -1,7 +1,7 @@
 import { API_BASE_URL, API_KEY } from './ApiConfig';
 
 const getDetails = async (movieId) => {
-  const endpoint = `/movie/${movieId}`;
+  const endpoint = `movie/${movieId}`;
   const queryString = 'language=en-US';
 
   const url = `${API_BASE_URL}${endpoint}?${queryString}`;
