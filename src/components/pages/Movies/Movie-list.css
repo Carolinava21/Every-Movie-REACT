@@ -18,24 +18,21 @@ ul{
     margin: 0px;
     width: 250px;
     /* Altura fija para todas las tarjetas */
-    display: inline-block;
     text-align: center;
    ;
   }
+   
   
   .cards img {
     
-    width: 250px;
+    width: 100%;
     
   }
 
   h3{
     font-family: sans-serif;
   }
-  p{
-    font-family: sans-serif;
-  }
-
+ 
   .pagination {
     display: flex;
     justify-content: center;

@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 //renderizado de tarjetas y paginación
 
-
-
 function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage}) {
   
   const [movies, setMovies] = useState([]);
@@ -36,13 +34,13 @@ function MovieList({selectedGenre,orderedByPopularity,page,previousPage,nextPage
       <ul>
         {movies?.map(movie => (
         <li key={movie.id} className='cards'>
-          <Link to={`/details/${movie.id}`}></Link>
+          <Link to={`/details/${movie.id}`}>
           <img
           src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : noPicture}
             alt={movie.title} className='pictures'/>
             
-          <h3 data-testid="movie.title">{movie.title}</h3>
-          <p>{movie.release_date ? movie.release_date.slice(0, 4) : 'N/A'}</p>
+          <h3 data-testid="movie.title">{movie.title}<br></br> ({movie.release_date ? movie.release_date.slice(0, 4) : 'N/A'})</h3>
+        </Link>
         </li>
         ))}
       </ul>

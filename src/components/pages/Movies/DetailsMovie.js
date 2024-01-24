@@ -44,9 +44,7 @@ function DetailMovies() {
           <p>{movieId.vote_average} out of 10 🤍</p>
           <p>{movieId.vote_count} votes</p>
           <p>"{movieId.overview}"</p>
-          </section>
-        
-      
+          </section>    
     </>
   );
 }
