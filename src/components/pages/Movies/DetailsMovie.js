@@ -1,21 +1,20 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import './DetailsMovie.css';
-import { getDetails } from '../../../DataMovies/ApiDetails'
+import { getDetails } from '../../../DataMovies/ApiDetails';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg'
+import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg';
 
 function DetailMovies() {
-    const [movieId, setMovieId] =useState({})
-    const { id } = useParams();
+  const [movieId, setMovieId] = useState({});
+  const { id } = useParams(); //conecta con el parametro estipulado en route
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const moviesDetails = await getDetails(id);
-        setMovieId(moviesDetails.results);
+        setMovieId(moviesDetails); // Actualizar directamente con los detalles de la película
         console.log(moviesDetails);
-
       } catch (error) {
         console.error('Error fetching movies:', error);
       }
@@ -27,34 +26,27 @@ function DetailMovies() {
   function goBack() {
     window.location.href = '/';
   }
+
   return (
     <>
       <header>Every - Movie</header>
       <div>
         <button onClick={goBack}>BACK</button>
       </div>
-      <Card id="movie-details">
-      <Card.Img
-        id="movie-details-img"
-        variant="top"
-        src={id.poster_path ? `https://image.tmdb.org/t/p/w500${id.poster_path}` : noPicture}
-      />
-      <Card.Body className="card-text">
-        <Card.Title id="movie-details-title">{id.title}</Card.Title>
-        <Card.Text>{id.overview}</Card.Text>
-        <Card.Text>Release Year: {id.release_date}</Card.Text>
-        <Card.Text>Voting average: {id.vote_average}</Card.Text>
-        <Card.Text>Total votes: {id.vote_count}</Card.Text>
-        <Card.Text>
-          Genres: &nbsp;
-          {id.genres && id.genres.map((genre, index) => {
-    return `${genre.name}${index === id.genres.length - 1 ? "." : ","}  `;
-})}
+      <Card key={movieId.id} className='details'>
+        <Card.Img
+          variant='top'
+          src={movieId.poster_path ? `https://image.tmdb.org/t/p/w500${movieId.poster_path}` : noPicture}
+        />
+        </Card>
+        <section>
+          <h1>{movieId.title} ({movieId.release_date ? movieId.release_date.slice(0, 4) : 'N/A'})</h1>
+          <p>{movieId.vote_average} out of 10 🤍</p>
+          <p>{movieId.vote_count} votes</p>
+          <p>"{movieId.overview}"</p>
+          </section>
         
-        </Card.Text>
-      </Card.Body>
-    </Card>
- 
+      
     </>
   );
 }
