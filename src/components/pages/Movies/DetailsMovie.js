@@ -41,6 +41,11 @@ function DetailMovies() {
         </Card>
         <section>
           <h1>{movieId.title} ({movieId.release_date ? movieId.release_date.slice(0, 4) : 'N/A'})</h1>
+          <div className='genres'>
+          {movieId.genres?.map(genre => (
+          <p key={genre.id} >{genre.name}</p>
+          ))}
+          </div>
           <p>{movieId.vote_average} out of 10 🤍</p>
           <p>{movieId.vote_count} votes</p>
           <p>"{movieId.overview}"</p>

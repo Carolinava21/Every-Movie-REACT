@@ -47,7 +47,7 @@ function handleChangeOrdered(popularity){
     popularity={popularity}/>
     <MovieList  selectedGenre={selectedGenre} orderedByPopularity={orderedByPopularity} page={page} 
     nextPage={nextPage} previousPage={previousPage} /> 
-    <footer>DEV - @Carolina Navarro, 2024</footer>
+    <footer>@Carolina Navarro, 2024</footer>
      </>
   )
 }
