@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import './DetailsMovie.css';
 import { getDetails } from '../../../DataMovies/ApiDetails';
 import { Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg';
 
 function DetailMovies() {
   const [movieId, setMovieId] = useState({});
   const { id } = useParams(); //conecta con el parametro estipulado en route
+  
 
   useEffect(() => {
     const fetchData = async () => {
