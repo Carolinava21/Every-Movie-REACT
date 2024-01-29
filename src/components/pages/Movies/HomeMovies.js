@@ -28,10 +28,10 @@ function HomeMovies({genres, onChangeGenre, onChangeOrder}) {
   return (    
     <nav className='menu'>
       <ul>
-      <li onClick={reHome} ><a href="#inicio">HOME</a></li>
+      <li onClick={reHome} >HOME</li>
             <li className='filterby'>
               <select 
-              id="filters"
+              data-testid="filters"
         name="category"
         onChange={handleGenreChange}
       >

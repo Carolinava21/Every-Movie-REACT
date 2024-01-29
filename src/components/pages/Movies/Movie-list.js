@@ -36,10 +36,10 @@ function MovieList({
 
   return (
     <div>
-      <ul>
+      <ul data-testid="linkToDetails">
         {movies?.map((movie) => (
-          <li key={movie.id} className="cards">
-            <Link to={`/details/${movie.id}`}>
+          <li key={movie.id} className="cards" data-testid="linkToDetails">
+            <Link to={`/details/${movie.id}`} >
               <img
                 src={
                   movie.poster_path

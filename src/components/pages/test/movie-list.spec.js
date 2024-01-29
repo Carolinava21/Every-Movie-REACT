@@ -33,7 +33,7 @@ test('movieList tiene botones de anterior y siguiente con las clases "pre" y "ne
   expect(nextButton).toHaveClass("next");
 });
 
-test.only("cambia el contenido de peliculas cuando se presiona el botón", async () => {
+test("cambia el contenido de peliculas cuando se presiona el botón", async () => {
   getMovies.mockResolvedValueOnce({
     results: [
       {
