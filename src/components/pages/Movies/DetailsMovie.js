@@ -2,14 +2,15 @@ import { useEffect, useState } from 'react';
 import './DetailsMovie.css';
 import { getDetails } from '../../../DataMovies/ApiDetails';
 import { Card } from 'react-bootstrap';
-import { useParams} from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import noPicture from 'C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg';
 
 function DetailMovies() {
-  const [movieId, setMovieId] = useState({});
+  const [movieId, setMovieId] = useState(null);
   const { id } = useParams(); //conecta con el parametro estipulado en route
+  const navigate = useNavigate();
   
-
+  console.log("IDDD", id)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,7 +26,11 @@ function DetailMovies() {
   }, [id]);
 
   function goBack() {
-    window.location.href = '/';
+    navigate('/') 
+  }
+
+  if(!movieId){
+    return (<p>Cargando...</p>)
   }
 
   return (
