@@ -1,0 +1,69 @@
+
+div {
+  display: flex,
+  
+}
+
+ul{
+    color: #fff;
+    flex-flow: row wrap;
+    justify-content:space-evenly;
+    margin-top: 2%;
+}
+
+.cards {
+    border: 3px solid #0b0118;
+    padding: 2px;
+    border-radius: 5px;
+    margin: 0px;
+    width: 250px;
+    /* Altura fija para todas las tarjetas */
+    text-align: center;
+   ;
+  }
+   
+  
+  .cards img {
+    
+    width: 100%;
+    
+  }
+
+  h3{
+    font-family: sans-serif;
+  }
+ 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+  }
+  
+  .next,
+  .pre,
+  .numberP {
+    color: #fff;
+    font-family: 'Monoton', sans-serif;
+    font-size: larger;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .next:hover,
+  .pre:hover {
+    background-color: #9F86C0;
+  }
+  
+  .next::after {
+    content: "→";
+    margin-left: 5px;
+  }
+  
+  .pre::before {
+    content: "←";
+    margin-right: 5px;
+  }
+  

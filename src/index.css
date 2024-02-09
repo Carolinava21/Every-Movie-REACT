@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+* {
+    background: #231942;
+    font-family: 'Monoton', sans-serif; 
+}
+
+header {
+    color: #FFFF;
+    text-align: center; /* Cambié 'align-self' a 'text-align' */
+    font-family: 'Monoton', sans-serif; /* Especifica una fuente de respaldo en caso de que 'Monoton' no esté disponible */
+    font-size: 80px;
+    align-self: center; /* Si decides usar 'align-self', úsalo en el contenedor padre, no en el elemento hijo */
+}
+
+footer {
+    color: #FFFF;
+    font-family: sans-serif;
+    font-style: italic;
+    padding: 10px 20px;
+    width: 20%;
+   }
