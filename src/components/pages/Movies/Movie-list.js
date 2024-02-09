@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./movie-list.css";
+import "./Movie-list.css";
 import { getMovies } from "../../../DataMovies/Api";
 import noPicture from "C:/Users/caroo/movie-react-challenge/src/img/noPicture.jpg";
 import { Link } from "react-router-dom";
