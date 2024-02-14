@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# EVERY MOVIE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MOVIE CHALLENGE, con framework- react y Java Script.
 
 ## Available Scripts
 
