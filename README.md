@@ -13,7 +13,7 @@ seleccionada.
 
 ## Prototipo de Alta fidelidad
 
-![prototipos](https://files.slack.com/files-pri/T0NNB6T0R-F06JE59NG6B/image.png)
+![prototipos](https://github.com/Carolinava21/Every-Movie-REACT/blob/main/src/img/image.png)
 
 ### `npm test`
 
