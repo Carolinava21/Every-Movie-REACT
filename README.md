@@ -11,13 +11,9 @@ seleccionada.
 
 
 
-### `npm start`
+## Prototipo de Alta fidelidad
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![prototipos](https://files.slack.com/files-pri/T0NNB6T0R-F06JE59NG6B/image.png)
 
 ### `npm test`
 
