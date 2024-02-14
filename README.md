@@ -2,9 +2,14 @@
 
 MOVIE CHALLENGE, con framework- react y Java Script.
 
-## Available Scripts
+## Definición de Producto  
 
-In the project directory, you can run:
+Página Web que despliega una lista de películas conectadas con la API TMDB. Se
+permite al usuario navegar por la página web por medio de paginación, filtrar por
+género, ordenar por popularidad y obtener los datos específicos de cada película
+seleccionada.
+
+
 
 ### `npm start`
 
