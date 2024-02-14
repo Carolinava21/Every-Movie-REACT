@@ -16,11 +16,15 @@ seleccionada.
 
 ## Tecnologías utilizadas 
 
-- [ ] **React** 
+- [ ] **React**
+- [ ] **JSX**
 - [ ] **JavaScript**
-- [ ] **HTML**
+- [ ] **React Router**
 - [ ] **CSS**
 - [ ] **API TMDB**
-- [ ] **Node.js**
 - [ ] **Jets**
 - [ ] **Git & Github**
+
+## Despliegue de la Página
+Este es el resultado final del desarollo de la página web
+![Despliegue](https://github.com/Carolinava21/Every-Movie-REACT/blob/main/src/img/6ffe2a70-95c1-44d2-a9bd-edc34a806d2b.gif)
