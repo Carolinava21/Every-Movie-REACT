@@ -1,6 +1,6 @@
 # EVERY MOVIE
 
-MOVIE CHALLENGE, con framework- react y Java Script.
+MOVIE CHALLENGE, con framework- React y Java-Script.
 
 ## Definición de Producto  
 
